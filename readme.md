@@ -110,8 +110,6 @@ Document with highest fraction of bin99 text fragments: [Corgi's 485APOS](https:
 4. Find storage for the full text, at fragment level. Normally I would deploy this on [datamule](https://datamule.xyz/product) with a nominal usage fee, updating in real time, but that breaks Open Pangram's License's noncommercial clause.
 5. Expand to other corpuses, such as European and Japanese filings.
 
-I am talking to Pangram, and have talked to several legal AI startups to see if 1-4 can be achieved. If (1-4) can be achieved, 5 should follow.
-
 **note about real time updates**
 
 The 14M parameter model can run on AWS lambda fairly fast. I estimate about $100/year to run it on the SEC XML + Text Corpus. The trick with real time updates is that the data is not that much, and spiky, so using even a T4 would be overkill. The T4 would have to run constantly (not fast enough spin up) at about $2k/year.
