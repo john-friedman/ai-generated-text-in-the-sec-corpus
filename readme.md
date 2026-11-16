@@ -98,6 +98,10 @@ Ethics code, S-1, and F-1 are the document types with most AI adoption.
 
 ![](plots\law_firms_by_document_type.png)
 
+Document with highest fraction of bin99 text fragments: [Corgi's 485APOS](https://www.sec.gov/Archives/edgar/data/2078265/000207826526000307/0002078265-26-000307-index.html). Here is a large block run through Pangram's Commercial API, for several reasons, but most of all because I like the AI detected card.
+
+![alt text](plots/corgi.png)
+
 ## Future
 
 1. Run AI detection on the full corpus, including the [SEC XML Corpus](https://datamule.xyz/articles/datamule-xml-tables/).
