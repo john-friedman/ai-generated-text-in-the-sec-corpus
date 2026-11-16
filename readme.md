@@ -104,8 +104,9 @@ Ethics code, S-1, and F-1 are the document types with most AI adoption.
 2. Improve the detector's accuracy.
 3. Train the detector to detect which model used and/or harness.
 4. Find storage for the full text, at fragment level. Normally I would deploy this on [datamule](https://datamule.xyz/product) with a nominal usage fee, updating in real time, but that breaks Open Pangram's License's noncommercial clause.
+5. Expand to other corpuses, such as European and Japanese filings.
 
-I am talking to Pangram, and have talked to several legal AI startups to see if 1-4 can be achieved.
+I am talking to Pangram, and have talked to several legal AI startups to see if 1-4 can be achieved. If (1-4) can be achieved, 5 should follow.
 
 **note about real time updates**
 
