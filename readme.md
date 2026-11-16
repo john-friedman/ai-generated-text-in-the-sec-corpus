@@ -6,6 +6,8 @@ This is a follow-up article to [Using Modal & Open Pangram to detect AI generate
 
 Scored using an 14M Electra model trained on [Open Pangram's](https://www.pangram.com/blog/introducing-open-pangram) Dataset. Model processed 330 billion tokens of text for $15 using [Modal](https://modal.com/) free credits applied to RTX Pro 6000. SEC text was downloaded using [datamule](https://datamule.xyz/articles/sec-standardized-text/).
 
+This is an aggregation of the original dataset. That dataset was ~200 GB, which is too large to store on GitHub.
+
 filings.parquet
 
 | Column | Type | Meaning |
@@ -30,6 +32,11 @@ ai_score_filings.parquet and no_ai_score_{year}.parquet
 | bin98 | uint16 | fragment count with 0.98 <= score < 0.99 |
 | bin99 | uint16 | fragment count with 0.99 <= score <= 1.00 |
 | mean_score | uint16 | mean score rounded to three decimal places and multiplied by 1000 |
+
+## Model + Inference
+
+model/ - weights
+inference/ - inference
 
 ## Results
 
@@ -90,6 +97,19 @@ By rudimentarily linking the law firm associated with a filing, we can naively e
 Ethics code, S-1, and F-1 are the document types with most AI adoption.
 
 ![](plots\law_firms_by_document_type.png)
+
+## Future
+
+1. Run AI detection on the full corpus, including the [SEC XML Corpus](https://datamule.xyz/articles/datamule-xml-tables/).
+2. Improve the detector's accuracy.
+3. Train the detector to detect which model used and/or harness.
+4. Find storage for the full text, at fragment level. Normally I would deploy this on [datamule](https://datamule.xyz/product) with a nominal usage fee, updating in real time, but that breaks Open Pangram's License's noncommercial clause.
+
+I am talking to Pangram, and have talked to several legal AI startups to see if 1-4 can be achieved.
+
+**note about real time updates**
+
+The 14M parameter model can run on AWS lambda fairly fast. I estimate about $100/year to run it on the SEC XML + Text Corpus. The trick with real time updates is that the data is not that much, and spiky, so using even a T4 would be overkill. The T4 would have to run constantly (not fast enough spin up) at about $2k/year.
 
 
 ## License

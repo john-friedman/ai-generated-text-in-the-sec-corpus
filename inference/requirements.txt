@@ -1,0 +1,6 @@
+numpy==2.4.6
+tensorrt-cu12==11.4.0.106
+nvidia-cuda-runtime-cu12==12.8.90
+nvidia-cuda-nvcc-cu12==12.8.93
+nvidia-cuda-nvrtc-cu12==12.8.93
+nvidia-cublas-cu12==12.8.4.1
